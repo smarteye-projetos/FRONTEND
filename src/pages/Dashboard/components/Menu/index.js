@@ -8,13 +8,15 @@ function Menu() {
       
       <ButtonMenu >Gerar Relatorio</ButtonMenu>
     
-      <ButtonMenu  >Grafico de Barra</ButtonMenu>
+      <ButtonMenu >Grafico de Barra</ButtonMenu>
       
       <ButtonMenu >Grafico de Linha</ButtonMenu>
       
-      <ButtonMenu  >Trocar Câmera</ButtonMenu>
+      <ButtonMenu  >Projeto 1</ButtonMenu>
       
-      <ButtonMenu >Ultima Atualização</ButtonMenu>
+      <ButtonMenu  >Projeto 2</ButtonMenu>
+      
+      <ButtonMenu  >Projeto 3</ButtonMenu>
       
   </Container>);
 }
