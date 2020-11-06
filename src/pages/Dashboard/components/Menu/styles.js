@@ -6,7 +6,7 @@ export const Container = styled.div`
    background-color: #5840BB;
    display: flex;
    flex-direction: column;
-   padding-top:100px;
+   padding-top:80px;
    padding-bottom:100px;
 `;
 
@@ -15,22 +15,27 @@ export const ButtonMenu = styled.div `
     position: relative;
     left: 0px;
     border-radius: 10px;
-    height:50px;
+    height:40px;
     border:none;
     background-color:${({select})=> select ? '#fff':'#5840BB'};
     margin-top:20px;
     cursor: pointer;
     color: #fff;
     transition: 100ms;
-    padding-top: 12px;
+    padding-top: 18px;
     padding-left: 70px;
     &:hover{
         background-color: #fff;
-        color: #000;
+        color:#42427D;
         left: 40px;
     }
 
     
+`;
+
+export const Title = styled.h2 `
+    color: #fff;
+    margin-left: 70px;
 `;
 
 
