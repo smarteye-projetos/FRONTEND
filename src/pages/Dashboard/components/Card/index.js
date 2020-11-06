@@ -24,14 +24,17 @@ function Card() {
         console.log(error);
       }
     }
+   
     getCamData();
-  },[]);
+
+  },[data]);
+  
   return (<Container>
       <Title>Dados Obtidos pela Câmera</Title>
       <Img src={data.url} alt="pessoa"></Img>
-      <Text>Quantidade Pessoas:{data.quantity}</Text>  
-      <Text>Data: 05/11/2020</Text>  
-      <Text>Hora: 04:40</Text>  
+      <Text>Quantidade de Pessoas: {data.quantity}</Text>  
+  <Text>Data: {data.updatedAt}</Text>  
+      
   </Container>);
 }
 

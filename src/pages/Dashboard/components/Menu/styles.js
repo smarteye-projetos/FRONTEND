@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
    width: 300px;
-   height: auto;
+   height: 400px;
    background-color: #5840BB;
    display: flex;
    flex-direction: column;
    padding-top:80px;
-   padding-bottom:100px;
+   padding-bottom:150px;
 `;
 
 export const ButtonMenu = styled.div `
