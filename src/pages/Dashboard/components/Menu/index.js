@@ -6,7 +6,7 @@ function Menu() {
   
   return(<Container>
       <Title>Dashboard</Title>
-      <ButtonMenu >Gerar Relatorio</ButtonMenu>
+      <ButtonMenu >Gerar Relatório</ButtonMenu>
     
       <ButtonMenu  >Projeto 1</ButtonMenu>
       

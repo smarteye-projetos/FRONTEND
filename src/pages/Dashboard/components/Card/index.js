@@ -17,7 +17,7 @@ function Card() {
     async function getCamData(){
       try{
         const response = await api.get('/cam/realtime');
-        console.log(response);
+        
         setData(response.data);
         
       }catch(error){
