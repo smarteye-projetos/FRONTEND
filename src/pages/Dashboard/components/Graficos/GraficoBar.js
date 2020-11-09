@@ -3,7 +3,7 @@ import React, {useState,useEffect} from 'react';
 import { Container } from './styles';
 import api from '../../../../server/index';
 import {
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
+  BarChart, Bar, Brush, ReferenceLine, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 
 function GraficoBar() {
@@ -15,7 +15,7 @@ function GraficoBar() {
         let response = await api.get('cam/list');
         let arr = response.data;
         let data = arr.map(item=>{
-            return {nome: item.updatedAt, quantidade:item.quantity};
+            return {id: `${item.id}`, QP:item.quantity};
         });
         setData(data);
         console.log(data);
@@ -24,7 +24,7 @@ function GraficoBar() {
       }
     }
     getData();
-  },[data]);
+  },[]);
   return (<Container>
      <BarChart
         width={500}
@@ -35,11 +35,13 @@ function GraficoBar() {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="id" />
         <YAxis />
         <Tooltip />
-        <Legend />
-        <Bar dataKey="quantidade" fill="#8884d8" />
+        <Legend verticalAlign="top" wrapperStyle={{ lineHeight: '40px' }} />
+        <ReferenceLine y={0} stroke="#000" />
+        <Brush dataKey="id" height={30} stroke="#8884d8" />
+        <Bar dataKey="QP" fill="#8884d8" />
         
       </BarChart>
   </Container>);
