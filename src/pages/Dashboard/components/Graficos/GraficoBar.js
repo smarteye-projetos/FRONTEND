@@ -24,7 +24,7 @@ function GraficoBar() {
       }
     }
     getData();
-  },[]);
+  },[data]);
   return (<Container>
      <BarChart
         width={500}
