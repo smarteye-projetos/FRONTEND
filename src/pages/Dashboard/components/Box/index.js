@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Container , Row} from './styles';
 import Card from '../Card';
-import GraficoBar from '../Graficos/GraficoBar';
+
+import GraficoLine from '../Graficos/GraficoLine';
 
 function Box() {
   return (<Container>
@@ -10,7 +11,7 @@ function Box() {
       <Card />
     </Row>
      <Row>
-      <GraficoBar />
+      <GraficoLine />
     </Row> 
   </Container>);
 }
