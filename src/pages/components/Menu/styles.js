@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
+import { Link } from 'react-router-dom';
+
 export const Container = styled.div`
    width: 300px;
-   height: 400px;
+   height: 100vh;
    background-color: #5840BB;
    display: flex;
    flex-direction: column;
@@ -28,6 +30,10 @@ export const ButtonMenu = styled.div `
         background-color: #fff;
         color:#42427D;
         left: 40px;
+
+        a {
+            color: #42427D;
+        }
     }
 
     
@@ -36,6 +42,12 @@ export const ButtonMenu = styled.div `
 export const Title = styled.h2 `
     color: #fff;
     margin-left: 70px;
+    font-size: 2rem;
+`;
+
+export const StyledLink = styled(Link)`
+   text-decoration: none;
+   color: white;
 `;
 
 

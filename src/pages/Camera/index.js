@@ -1,10 +1,10 @@
 import React from 'react';
 
 import { Container } from './styles';
-import Menu from './components/Menu';
+import Menu from '../components/Menu';
 import Box from './components/Box';
 
-function Dashboard() {
+function Camera() {
   return (
     <Container>
      <Menu /> 
@@ -14,4 +14,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Camera;
