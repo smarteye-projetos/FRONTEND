@@ -6,7 +6,8 @@ import Camera from './pages/Camera';
 import Wifi from './pages/Wifi';
 import Bluetooth from './pages/Bluetooth';
 import RFID from './pages/RFID';
-import GPRS from './pages/GPRS';
+import GSM from './pages/GSM';
+import PIR from './pages/PIR';
 
 
 
@@ -19,7 +20,8 @@ function App() {
         <Route path="/wifi" exact component={Wifi} />
         <Route path="/bluetooth" exact component={Bluetooth} />
         <Route path="/rfid" exact component={RFID} />
-        <Route path="/gprs" exact component={GPRS} />
+        <Route path="/gsm" exact component={GSM} />
+        <Route path="/pir" exact component={PIR} />
       </Switch>
     </BrowserRouter>   
   </>);

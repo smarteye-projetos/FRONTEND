@@ -27,7 +27,11 @@ function Menu() {
       </ButtonMenu>
 
       <ButtonMenu>
-        <StyledLink to = "/gprs"> GPRS </StyledLink>
+        <StyledLink to = "/gsm"> GSM </StyledLink>
+      </ButtonMenu>
+
+      <ButtonMenu>
+        <StyledLink to = "/pir"> PIR </StyledLink>
       </ButtonMenu>
       
   </Container>);
