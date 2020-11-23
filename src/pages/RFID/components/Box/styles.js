@@ -17,5 +17,4 @@ export const Row = styled.div`
    flex-direction: column;
    align-items: center;
    background-color: #fff;
-   
 `;

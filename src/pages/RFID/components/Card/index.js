@@ -1,18 +1,22 @@
 import React,{useEffect , useState} from 'react';
 
-import { Container , Title , Text , Img} from './styles';
+import { Container , Title , Text } from './styles';
 
 import api from '../../../../server/index';
 function Card() {
   const [data , setData] = useState({"createdAt": "",
+  "file_name": "ImagemGerada.png",
   "id": "",
+  "ip": "",
   "quantity": "",
-  "updatedAt": ""
+  "size": "",
+  "updatedAt": "",
+  "url": ""
 });
   useEffect(()=>{
-    async function getWifiData(){
+    async function getCamData(){
       try{
-        const response = await api.get('/wifi/realtime');
+        const response = await api.get('/cam/realtime');
         
         setData(response.data);
         
@@ -21,14 +25,16 @@ function Card() {
       }
     }
    
-    getWifiData();
+    getCamData();
 
   },[data]);
   
   return (<Container>
-        <Title>Dados obtidos pelo script</Title>
-        <Text>Quantidade de Pessoas: {data.quantity}</Text>  
-    <Text>Data: {data.updatedAt}</Text>  
+      <Title>Dados Obtidos </Title>
+      <Text>entrada: </Text>  
+  <Text>Data: </Text>  
+  <Text>saida: </Text>  
+  <Text>Data: </Text>  
       
   </Container>);
 }
