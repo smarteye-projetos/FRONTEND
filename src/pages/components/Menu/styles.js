@@ -2,52 +2,37 @@ import styled from 'styled-components';
 
 import { Link } from 'react-router-dom';
 
-export const Container = styled.div`
-   width: 300px;
-   height: 100vh;
-   background-color: #5840BB;
-   display: flex;
-   flex-direction: column;
-   padding-top:80px;
-   padding-bottom:150px;
+export const Container = styled.ul`
+    list-style:none;
+    background-color:#4682B4;
+    float:right;
+    position: fixed;
+    padding-left: 52%; 
+    width: 100vw;
+    height: 8vh;
+    font-size: 75%;
 `;
 
-export const ButtonMenu = styled.div `
-
+export const Item = styled.li`
     position: relative;
-    left: 0px;
-    border-radius: 10px;
-    height:40px;
-    border:none;
-    background-color:${({select})=> select ? '#fff':'#5840BB'};
-    margin-top:20px;
+    float:left;
+    padding: 1.2% 2% 1.3% 1.7%;
+    font-size: 1.2em;
     cursor: pointer;
-    color: #fff;
-    transition: 100ms;
-    padding-top: 18px;
-    padding-left: 70px;
     &:hover{
-        background-color: #fff;
-        color:#42427D;
-        left: 40px;
-
-        a {
-            color: #42427D;
-        }
+        background-color: #B0C4DE;
     }
-
-    
 `;
 
-export const Title = styled.h2 `
-    color: #fff;
-    margin-left: 70px;
-    font-size: 2rem;
+export const Title = styled.p `
+    color: black;
 `;
 
 export const StyledLink = styled(Link)`
-   text-decoration: none;
-   color: white;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 `;
 
 
