@@ -8,18 +8,33 @@ import GraficoLine from '../Graficos/GraficoLine';
 import api from '../../../../server/index';
 
 function Box() {
-  const [data,setData] = useState();
+  const [avaragePerDay, setAvarage] = useState([]);
+  const [crowdANDquiet, setCrowdANDquiet] = useState([]);
+
     useEffect(()=>{
-        async function getData(){
+        async function getAvaragePerDay(){
             try{
                 let response = await api.get('/cam/averagePerDay');
                 console.log(response);
-                setData(response.data);
+                setAvarage(response.data);
+                console.log(avaragePerDay);
             }catch(error){
                 console.log(error);
             }
         }
-        getData();
+
+        async function getCrowANDquiet(){
+          try{
+              let response = await api.get('/cam/crowdANDquietDay');
+              console.log(response);
+              setCrowdANDquiet(response.data);
+          }catch(error){
+              console.log(error);
+          }
+      }
+
+      getAvaragePerDay();
+      getCrowANDquiet();
     });
 
   return (<Container>
@@ -30,7 +45,9 @@ function Box() {
       <GraficoLine />
     </Row>
     <Row>
-  <h1>Média Diária: {data.toFixed(2)} pessoas</h1>
+      <h1>Média Diária: {avaragePerDay.toFixed(2)} pessoas</h1>
+      <h3>Dia da semana que mais tem gente: {crowdANDquiet.crowd}</h3>
+      <h3>Dia da semana que menos tem gente: {crowdANDquiet.quiet}</h3>
     </Row>
   </Container>);
 }
