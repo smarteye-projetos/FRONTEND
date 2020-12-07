@@ -11,4 +11,8 @@ export const Container = styled.div`
 `;
 
 export const Row = styled.div`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background-color: #fff;
 `;
