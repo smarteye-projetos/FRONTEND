@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container } from '../components/styles';
 import Menu from '../components/Menu';
 import Box from './components/Box';
 
