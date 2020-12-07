@@ -16,7 +16,7 @@ function Box() {
             try{
                 let response = await api.get('/cam/averagePerDay');
                 console.log(response);
-                setAvarage(response.data);
+                setAvarage(response.data.toFixed(2));
                 console.log(avaragePerDay);
             }catch(error){
                 console.log(error);
@@ -45,7 +45,7 @@ function Box() {
       <GraficoLine />
     </Row>
     <Row>
-      <h1>Média Diária: {avaragePerDay.toFixed(2)} pessoas</h1>
+      <h1>Média Diária: {avaragePerDay} pessoas</h1>
       <h3>Dia da semana que mais tem gente: {crowdANDquiet.crowd}</h3>
       <h3>Dia da semana que menos tem gente: {crowdANDquiet.quiet}</h3>
     </Row>
