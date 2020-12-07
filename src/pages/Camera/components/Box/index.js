@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import { Container , Row} from './styles';
+import { Container , Row} from '../../../components/Box/styles';
 import Card from '../Card';
 
 import GraficoLine from '../Graficos/GraficoLine';

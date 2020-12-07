@@ -1,7 +1,6 @@
 import React,{useEffect , useState} from 'react';
 
-import { Container , Title , Text } from './styles';
-
+import { Container , Title , Text } from '../../../components/Card/styles';
 import api from '../../../../server/index';
 function Card() {
   const [data , setData] = useState({"createdAt": "",
