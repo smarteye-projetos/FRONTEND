@@ -9,7 +9,11 @@ import api from '../../../../server/index';
 
 function Box() {
   const [avaragePerDay, setAvarage] = useState([]);
-  const [crowdANDquiet, setCrowdANDquiet] = useState([]);
+  const [crowdAndQuietDay, setcrowdAndQuietDay] = useState([]);
+  const [crowdAndQuietMonth, setcrowdAndQuietMonth] = useState([]);
+  const [dayMore, setDayMore] = useState({});
+  const [dayLess, setDayLess] = useState({});
+  
 
     useEffect(()=>{
         async function getAvaragePerDay(){
@@ -23,18 +27,38 @@ function Box() {
             }
         }
 
-        async function getCrowANDquiet(){
+        async function getCrowAndQuietDay(){
           try{
-              let response = await api.get('/cam/crowdANDquietDay');
-              console.log(response);
-              setCrowdANDquiet(response.data);
+              let response = await api.get('/cam/crowdAndQuietDay');
+              setcrowdAndQuietDay(response.data);
           }catch(error){
               console.log(error);
           }
       }
 
+      async function getCrowAndQuietMonth(){
+        try{
+            let response = await api.get('/cam/crowdAndQuietMonth');
+            setcrowdAndQuietMonth(response.data);
+        }catch(error){
+            console.log(error);
+        }
+      }
+
+      async function getDayMoreAndLess(){
+        try{
+            let response = await api.get('/cam/dateMoreAndLess');
+            setDayMore(response.data.dateMore);
+            setDayLess(response.data.dateLess);
+        }catch(error){
+            console.log(error);
+        }
+      }
+
       getAvaragePerDay();
-      getCrowANDquiet();
+      getCrowAndQuietDay();
+      getCrowAndQuietMonth();
+      getDayMoreAndLess();
     });
 
   return (<Container>
@@ -46,8 +70,14 @@ function Box() {
     </Row>
     <Row>
       <h1>Média Diária: {avaragePerDay} pessoas</h1>
-      <h3>Dia da semana que mais tem gente: {crowdANDquiet.crowd}</h3>
-      <h3>Dia da semana que menos tem gente: {crowdANDquiet.quiet}</h3>
+      <h3>Dia da semana mais movimentado: {crowdAndQuietDay.crowd}</h3>
+      <h3>Dia da semana menos movimentado: {crowdAndQuietDay.quiet}</h3>
+      <br></br>
+      <h3>Mês do ano mais movimentado: {crowdAndQuietMonth.crowd}</h3>
+      <h3>Mês do ano menos movimentado: {crowdAndQuietMonth.quiet}</h3>
+      <br></br>
+      <h3>Data que mais teve pessoas: {dayMore.day} / {dayMore.month} / {dayMore.year}</h3>
+      <h3>Data que menos teve pessoas: {dayLess.day} / {dayMore.month} / {dayMore.year}</h3>
     </Row>
   </Container>);
 }
