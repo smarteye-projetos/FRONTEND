@@ -11,6 +11,7 @@ function Box() {
   const [avaragePerDay, setAvarage] = useState([]);
   const [crowdAndQuietDay, setcrowdAndQuietDay] = useState([]);
   const [crowdAndQuietMonth, setcrowdAndQuietMonth] = useState([]);
+  const [crowdAndQuietHour, setcrowdAndQuietHour] = useState([]);
   const [dayMore, setDayMore] = useState({});
   const [dayLess, setDayLess] = useState({});
   
@@ -45,6 +46,15 @@ function Box() {
         }
       }
 
+      async function getCrowAndQuietHour(){
+        try{
+            let response = await api.get('/cam/crowdAndQuietHour');
+            setcrowdAndQuietHour(response.data);
+        }catch(error){
+            console.log(error);
+        }
+      }
+
       async function getDayMoreAndLess(){
         try{
             let response = await api.get('/cam/dateMoreAndLess');
@@ -58,6 +68,7 @@ function Box() {
       getAvaragePerDay();
       getCrowAndQuietDay();
       getCrowAndQuietMonth();
+      getCrowAndQuietHour();
       getDayMoreAndLess();
     });
 
@@ -75,6 +86,9 @@ function Box() {
       <br></br>
       <h3>Mês do ano mais movimentado: {crowdAndQuietMonth.crowd}</h3>
       <h3>Mês do ano menos movimentado: {crowdAndQuietMonth.quiet}</h3>
+      <br></br>
+      <h3>Hora do dia mais movimentada: {crowdAndQuietHour.crowd}</h3>
+      <h3>Hora do dia menos movimentada: {crowdAndQuietHour.quiet}</h3>
       <br></br>
       <h3>Data que mais teve pessoas: {dayMore.day} / {dayMore.month} / {dayMore.year}</h3>
       <h3>Data que menos teve pessoas: {dayLess.day} / {dayMore.month} / {dayMore.year}</h3>
