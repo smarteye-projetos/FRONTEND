@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Container , Row} from '../../../components/Box/styles';
+import { Container , Row} from './styles';
 import Card from '../Card';
 
-import GraficoLine from '../Graficos/GraficoLine';
+import GraficoLine from '../../../../components/Graficos/GraficoLine';
 
 function Box() {
   return (<Container>
@@ -11,7 +11,7 @@ function Box() {
       <Card />
     </Row>
      <Row>
-      <GraficoLine />
+      <GraficoLine apiRoute = "/wifi/average/day"/>
     </Row> 
   </Container>);
 }

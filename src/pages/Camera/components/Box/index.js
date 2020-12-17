@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
-import { Container , Row} from '../../../components/Box/styles';
+import { Container , Row} from './styles';
 import Card from '../Card';
 
-import GraficoLine from '../Graficos/GraficoLine';
+import GraficoLine from '../../../../components/Graficos/GraficoLine';
 
 import api from '../../../../server/index';
 
@@ -77,7 +77,7 @@ function Box() {
       <Card />
     </Row>
      <Row>
-      <GraficoLine />
+      <GraficoLine apiRoute = "/cam/average/day"/>
     </Row>
     <Row>
       <h1>Média Diária: {avaragePerDay} pessoas</h1>

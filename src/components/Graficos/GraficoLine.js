@@ -5,17 +5,17 @@ import React, {useEffect, useState} from 'react';
     LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ReferenceLine,
   } from 'recharts';
 
- import api from '../../../../server/index';
+ import api from '../../server/index';
 
 
  
   
-function GraficoLine() {
+function GraficoLine(apiRoute) {
     const [data,setData] = useState();
     useEffect(()=>{
         async function getData(){
             try{
-                let response = await api.get('/cam/average/day');
+                let response = await api.get(apiRoute);
                 console.log(response);
                 setData(response.data);
             }catch(error){

@@ -1,6 +1,6 @@
 import React,{useEffect , useState} from 'react';
 
-import { Container , Title , Text } from '../../../components/Card/styles';
+import { Container , Title , Text } from './styles';
 
 import api from '../../../../server/index';
 function Card() {
