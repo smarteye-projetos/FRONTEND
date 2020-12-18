@@ -8,6 +8,7 @@ import Bluetooth from './pages/Bluetooth';
 import RFID from './pages/RFID';
 import GSM from './pages/GSM';
 import PIR from './pages/PIR';
+import General from './pages/Geral';
 
 
 
@@ -15,7 +16,7 @@ function App() {
   return (<>
     <BrowserRouter>
       <Switch>
-        <Route path="/" exact component={Camera} />
+        <Route path="/" exact component={General} />
         <Route path="/camera"component={Camera} />
         <Route path="/wifi" exact component={Wifi} />
         <Route path="/bluetooth" exact component={Bluetooth} />
