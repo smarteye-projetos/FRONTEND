@@ -12,11 +12,11 @@ export const Global = createGlobalStyle`
       font-size: ${px2vw(30)};
 
       @media (min-width: 768px) {
-        font-size: ${px2vw(22)};
+        font-size: ${px2vw(24)};
       }
 
       @media (min-width: 1024px) {
-        font-size: ${px2vw(20)};
+        font-size: ${px2vw(22)};
       }
     }
 `;

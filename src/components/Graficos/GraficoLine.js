@@ -26,21 +26,21 @@ function GraficoLine(apiRoute) {
     });
   return (<Container>
       <LineChart
-        width={600}
-        height={400}
+        width={550}
+        height={350}
         data={data}
         margin={{
           top: 20, right: 50, left: 20, bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="hour" />
-        <YAxis />
+        <XAxis dataKey="Hora" />
+        <YAxis dataKey="Qtd Pessoas"/>
         <Tooltip />
         <Legend />
-        <ReferenceLine x="Page C" stroke="red" label="Max PV PAGE" />
+        <ReferenceLine stroke="red" label="Max PV PAGE" />
         <ReferenceLine y={10} label="Max" stroke="red" />
-        <Line type="monotone" dataKey="average" stroke="#8884d8" />
+        <Line type="monotone" dataKey="Média da quantidade de pessoas por hora" stroke="#8884d8" />
       </LineChart>
   </Container>);
 }

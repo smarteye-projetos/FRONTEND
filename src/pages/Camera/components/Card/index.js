@@ -2,18 +2,21 @@ import React,{useEffect , useState} from 'react';
 
 import { Container , Title , Text , Img} from './styles';
 
-
 import api from '../../../../server/index';
+
 function Card() {
-  const [data , setData] = useState({"createdAt": "",
-  "file_name": "ImagemGerada.png",
-  "id": "",
-  "ip": "",
-  "quantity": "",
-  "size": "",
-  "updatedAt": "",
-  "url": ""
-});
+    const [data , setData] = useState({"createdAt": "",
+    "file_name": "ImagemGerada.png",
+    "id": "",
+    "ip": "",
+    "quantity": "",
+    "size": "",
+    "updatedAt": "",
+    "url": ""
+  });
+
+  const now = new Date(data.updatedAt);
+
   useEffect(()=>{
     async function getCamData(){
       try{
@@ -30,12 +33,15 @@ function Card() {
 
   },[data]);
   
-  return (<Container>
-      <Title>Dados Obtidos pela Câmera</Title>
+  return (
+  <Container>
+      <Title>Câmera - Tempo Real</Title>
       <Img src={data.url} alt="pessoa"></Img>
-      <Text>Quantidade de Pessoas: {data.quantity}</Text>  
-  <Text>Data: {data.updatedAt}</Text>  
-      
+      <Text>{data.quantity} pessoas</Text>  
+      <Text>Data: {
+        now.getDate() + "/" + (now.getMonth()+1) + "/" + now.getFullYear() + 
+        " " + now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds()          
+      }</Text>  
   </Container>);
 }
 

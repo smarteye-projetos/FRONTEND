@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-import { Container , Row} from './styles';
+import {Container, Row} from './styles';
 import Card from '../Card';
 
 import GraficoLine from '../../../../components/Graficos/GraficoLine';
@@ -72,28 +72,30 @@ function Box() {
       getDayMoreAndLess();
     });
 
-  return (<Container>
-    <Row>
-      <Card />
-    </Row>
-     <Row>
-      <GraficoLine apiRoute = "/cam/average/day"/>
-    </Row>
-    <Row>
-      <h1>Média Diária: {avaragePerDay} pessoas</h1>
-      <h3>Dia da semana mais movimentado: {crowdAndQuietDay.crowd}</h3>
-      <h3>Dia da semana menos movimentado: {crowdAndQuietDay.quiet}</h3>
-      <br></br>
-      <h3>Mês do ano mais movimentado: {crowdAndQuietMonth.crowd}</h3>
-      <h3>Mês do ano menos movimentado: {crowdAndQuietMonth.quiet}</h3>
-      <br></br>
-      <h3>Hora do dia mais movimentada: {crowdAndQuietHour.crowd}</h3>
-      <h3>Hora do dia menos movimentada: {crowdAndQuietHour.quiet}</h3>
-      <br></br>
-      <h3>Data que mais teve pessoas: {dayMore.day} / {dayMore.month} / {dayMore.year}</h3>
-      <h3>Data que menos teve pessoas: {dayLess.day} / {dayMore.month} / {dayMore.year}</h3>
-    </Row>
-  </Container>);
+  return (
+    <Container>  
+      <Row>
+        <Card />
+      </Row>
+      <Row>
+        <GraficoLine apiRoute = "/cam/average/day"/>
+      </Row>
+      <Row>
+        <h1>Média Diária: {avaragePerDay} pessoas</h1>
+        <br/>
+        <h3>Dia da semana mais movimentado: {crowdAndQuietDay.crowd}</h3>
+        <h3>Dia da semana menos movimentado: {crowdAndQuietDay.quiet}</h3>
+        <br></br>
+        <h3>Mês do ano mais movimentado: {crowdAndQuietMonth.crowd}</h3>
+        <h3>Mês do ano menos movimentado: {crowdAndQuietMonth.quiet}</h3>
+        <br></br>
+        <h3>Hora do dia mais movimentada: {crowdAndQuietHour.crowd}</h3>
+        <h3>Hora do dia menos movimentada: {crowdAndQuietHour.quiet}</h3>
+        <br></br>
+        <h3>Data que mais teve pessoas: {dayMore.day} / {dayMore.month} / {dayMore.year}</h3>
+        <h3>Data que menos teve pessoas: {dayLess.day} / {dayMore.month} / {dayMore.year}</h3>
+      </Row>
+    </Container>);
 }
 
 export default Box;

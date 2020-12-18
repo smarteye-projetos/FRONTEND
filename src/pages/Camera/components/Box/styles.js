@@ -22,4 +22,6 @@ export const Row = styled.div`
    flex-direction: column;
    align-items: center;
    background-color: #fff;
+   margin: 0 ${px2vw(15)} 0 ${px2vw(15)};
+   font-size: 0.8rem;
 `;
